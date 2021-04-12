@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Movies from './Movies';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home';
@@ -20,7 +19,6 @@ function App() {
           <Route path="/contact" exact component={Contact} />
         </Switch>
       </Router>
-      <Movies />
     </div>
   );
 }
