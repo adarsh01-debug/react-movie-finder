@@ -5,7 +5,7 @@ import Movie from '../Movie';
 
 function Home() {
 
-    const [movies, setMovies] = useState([]);
+    const [movie, setMovies] = useState("");
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState("endgame");
 
@@ -14,10 +14,10 @@ function Home() {
       }, [query]);
 
     const fetchMovies = async () =>{
-        const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=33b198db`);
+        const response = await fetch(`http://www.omdbapi.com/?t=${query}&apikey=33b198db`);
         const data = await response.json();
-        setMovies(data.Search);
-        console.log(data.Search);
+        setMovies(data);
+        console.log(data);
     };
 
     const updateSearch = e => {
@@ -39,12 +39,10 @@ function Home() {
                 </div>
             </form>
             <div className="movies">
-                {movies.map(movie => (
-                    <Movie key={movie.imdbID} title={movie.Title} image={movie.Poster} year={movie.Year}/>
-                ))};
+                    <Movie key={movie.imdbID} title={movie.Title} image={movie.Poster} year={movie.Year} genre={movie.Genre} actors={movie.Actors} released={movie.Released} runtime={movie.Runtime} imdb={movie.imdbRating} plot={movie.Plot}/>
             </div>
         </div>
     )
 }
 
-export default Home
+export default Home;
