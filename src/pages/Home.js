@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {AiOutlineSearch} from 'react-icons/ai';
 import '../App.css';
+import Movie from '../Movie';
 
 function Home() {
 
+    const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState("");
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("endgame");
 
     useEffect( async ()=>{
         fetchMovies();
@@ -14,7 +16,8 @@ function Home() {
     const fetchMovies = async () =>{
         const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=33b198db`);
         const data = await response.json();
-        console.log(data);
+        setMovies(data.Search);
+        console.log(data.Search);
     };
 
     const updateSearch = e => {
@@ -35,6 +38,11 @@ function Home() {
                     <button className="search-button" type="submit"><AiOutlineSearch size={20}/></button>
                 </div>
             </form>
+            <div className="movies">
+                {movies.map(movie => (
+                    <Movie key={movie.imdbID} title={movie.Title} image={movie.Poster} year={movie.Year}/>
+                ))};
+            </div>
         </div>
     )
 }
