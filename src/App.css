@@ -95,6 +95,26 @@
   cursor: pointer;
 }
 
+.year-bar{
+  width: 20vw;
+  height: 2rem;
+  outline: none;
+  border:none;
+  padding: 10px;
+  border-left: 1px solid black;
+}
+
+.note{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .note p{
+  padding-left: 7.5rem;
+} */
+
+
 /* HOME END */
 
 /* MEDIA QUERIES START */
@@ -110,6 +130,14 @@
 
   .search-bar{
     width: 75vw;
+  }
+
+  .year-bar{
+    width: 40vw;
+  }
+
+  .note p{
+    font-size: 13px;
   }
 }
 
