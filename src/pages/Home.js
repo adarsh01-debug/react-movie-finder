@@ -45,7 +45,7 @@ function Home() {
             <form className="search-form" onSubmit={getSearch}>
                 <div className="search-section">
                     <input className="search-bar" type="text" placeholder="Search a movie..." value={search} onChange={updateSearch}/>
-                    <input className="year-bar" type="text" placeholder="Year" value={year} onChange={updateYear}/>
+                    <input className="year-bar" type="text" placeholder="Year (optional)" value={year} onChange={updateYear}/>
                     <button className="search-button" type="submit"><AiOutlineSearch size={20}/></button>
                 </div>
                 <div className="note">
