@@ -117,6 +117,26 @@
 
 /* HOME END */
 
+
+/* ABOUT END */
+
+.about{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h1{
+  margin: 2rem;
+}
+
+.about p{
+  margin-bottom: 2rem;
+}
+
+/* ABOUT END */
+
 /* MEDIA QUERIES START */
 
 @media only screen and (max-width: 750px){
