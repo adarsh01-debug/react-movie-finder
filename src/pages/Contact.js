@@ -7,7 +7,7 @@ function Contact() {
     return (
         <div to="/contact" className="contact">
             <h1>Contact</h1>
-            <h4><FaGithub size={20}/> Find the code <a href="https://github.com/adarsh01-debug">here</a>.</h4>
+            <h4><FaGithub size={20}/> Find the code <a href="https://github.com/adarsh01-debug/react-movie-finder">here</a>.</h4>
             <div class="icons-container">
             <div class="social-icons spinned text-center">
                 <a class="item facebook" href="#"><em><FaFacebook size={20}/></em></a>
